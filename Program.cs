@@ -9,10 +9,12 @@ namespace aula1
             Console.WriteLine(" - Start - ");
 
             ContaCorrente contaDaCamila = new ContaCorrente();
-            contaDaCamila.titular = new Cliente();
-            contaDaCamila.titular.nome = "Camila";
 
-            Console.WriteLine(contaDaCamila.titular.nome);
+            contaDaCamila.Titular = new Cliente();
+
+            contaDaCamila.Titular.Nome = "Camila";
+
+            Console.WriteLine(contaDaCamila.Titular.Nome);
         }
     }
 }

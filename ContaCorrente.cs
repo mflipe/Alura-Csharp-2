@@ -2,35 +2,51 @@ namespace aula1
 {
     public class ContaCorrente
     {
-        public Cliente titular;
-        public int agencia;
-        public int numero;
-        public double saldo;
+        public Cliente Titular { get; set; }
+        private int _agencia { get; set; }
+        private int _numero { get; set; }
+        private double _saldo = 100;
+        public double Saldo
+        {
+            get
+            {
+                return _saldo;
+            }
+            set
+            {
+                if (value < 0)
+                {
+                    return;
+                }
+
+                _saldo = value;
+            }
+        }
 
         public void Depositar(double valor)
         {
-            this.saldo += valor;
+            _saldo += valor;
         }
 
         public bool Sacar(double valor)
         {
-            if (this.saldo < valor)
+            if (_saldo < valor)
             {
                 return false;
             }
 
-            this.saldo -= valor;
+            _saldo -= valor;
             return true;
         }
 
         public bool Transferir(double valor, ContaCorrente contaDestino)
         {
-            if (this.saldo < valor)
+            if (_saldo < valor)
             {
                 return false;
             }
 
-            this.saldo -= valor;
+            _saldo -= valor;
             contaDestino.Depositar(valor);
             return true;
         }
@@ -39,8 +55,21 @@ namespace aula1
 
     public class Cliente
     {
-        public string nome;
-        public string cpf;
-        public string profissao;
+
+        private string _cpf;
+        public string Nome { get; set; }
+        public string CPF
+        {
+            get
+            {
+                return _cpf;
+            }
+            set
+            {
+                // Escrevo minha lógica de validação de CPF
+                _cpf = value;
+            }
+        }
+        public string Profissao { get; set; }
     }
 }
