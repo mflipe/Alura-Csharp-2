@@ -8,20 +8,11 @@ namespace aula1
         {
             Console.WriteLine(" - Start - ");
 
-            ContaCorrente primeiraContaCorrente = new ContaCorrente();
-            primeiraContaCorrente.saldo = 200;
-            Console.WriteLine(primeiraContaCorrente.saldo);
+            ContaCorrente contaDaCamila = new ContaCorrente();
+            contaDaCamila.titular = new Cliente();
+            contaDaCamila.titular.nome = "Camila";
 
-            primeiraContaCorrente.saldo += 100;
-            Console.WriteLine(primeiraContaCorrente.saldo);
-
-            ContaCorrente segundaContaCorrente = new ContaCorrente();
-            segundaContaCorrente.saldo = 50;
-
-            Console.WriteLine("primeira conta tem " + primeiraContaCorrente.saldo);
-            Console.WriteLine("segunda conta tem " + segundaContaCorrente.saldo);
-
-            Console.ReadLine();
+            Console.WriteLine(contaDaCamila.titular.nome);
         }
     }
 }

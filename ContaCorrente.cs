@@ -2,7 +2,7 @@ namespace aula1
 {
     public class ContaCorrente
     {
-        public string titular;
+        public Cliente titular;
         public int agencia;
         public int numero;
         public double saldo;
@@ -34,6 +34,13 @@ namespace aula1
             contaDestino.Depositar(valor);
             return true;
         }
-        
+
+    }
+
+    public class Cliente
+    {
+        public string nome;
+        public string cpf;
+        public string profissao;
     }
 }
