@@ -8,7 +8,7 @@ namespace aula1
         {
             Console.WriteLine(" - Start - ");
 
-            ContaCorrente contaDaCamila = new ContaCorrente();
+            ContaCorrente contaDaCamila = new ContaCorrente(867, 86712540);
 
             contaDaCamila.Titular = new Cliente();
 

@@ -2,9 +2,28 @@ namespace aula1
 {
     public class ContaCorrente
     {
+        public static int TotalDeContasCriadas { get; private set; }
         public Cliente Titular { get; set; }
         private int _agencia { get; set; }
+        public int Agencia
+        {
+            get
+            {
+                return _agencia;
+            }
+            set
+            {
+                if (value <= 0)
+                {
+                    return;
+                }
+
+                _agencia = value;
+            }
+        }
         private int _numero { get; set; }
+        public int Numero { get; set; }
+
         private double _saldo = 100;
         public double Saldo
         {
@@ -21,6 +40,13 @@ namespace aula1
 
                 _saldo = value;
             }
+        }
+
+        public ContaCorrente(int agencia, int numero)
+        {
+            Agencia = agencia;
+            Numero = numero;
+            TotalDeContasCriadas++;
         }
 
         public void Depositar(double valor)
